@@ -4,24 +4,26 @@
   }
 @font-face {
     font-family: "IntervogueSoft";
-    src: url('/assets/fonts/IntervogueSoftAlt-Regular.otf');
+    src: url('intervogue-soft-alt-regular.otf');
     font-weight: 400;
 }
 @font-face {
     font-family: "IntervogueSoft";
-    src: url('/assets/fonts/IntervogueSoftAlt-Medium.otf');
+    src: url('intervogue-soft-alt-regular.otf');
     font-weight: 500;
 }
 @font-face {
     font-family: "IntervogueSoft";
-    src: url('/assets/fonts/IntervogueSoftAlt-Bold.otf');
+    src: url('intervogue-soft-alt-regular.otf');
     font-weight: 700;
 }
 @font-face {
     font-family: "Soligant";
-    src: url('/assets/fonts/Soligant.otf');
+    src: url('Soligant.otf');
 }
-
+.nama-p{
+  font-family: var(--font-soligant);
+}
 :root {
     --font-soligant: "Soligant";
     --font-intervogue: "IntervogueSoft";
