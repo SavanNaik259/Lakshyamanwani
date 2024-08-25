@@ -1,3 +1,4 @@
+
 * {
     box-sizing: border-box;
 
@@ -22,7 +23,7 @@
     src: url('Soligant.otf');
 }
 .nama-p{
-  font-family: var(--font-soligant);
+  
 }
 :root {
     --font-soligant: "Soligant";
@@ -77,6 +78,9 @@ h1, h2, h3, h4, h5, h6{
     font-family: var(--font-soligant);
     margin-bottom: 0;
 }
+ .nama-g{
+  font-size: 30px!important;
+}
 p {
     color: var(--text-dark);
     margin: 0;
@@ -112,20 +116,16 @@ button{
     border:none;
     background: transparent;
 }
-input, textarea {
+
+ input, textarea {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    border-radius: 0;
+  border-radius: 0;
     background-color: transparent;
     outline: none;
     border: none;
 }
-.nama-p{
-    font-size:30px!important;
-    font-weight:600;
-}
-
 input:focus, textarea:focus {
     border: none;
     outline: none;
@@ -377,7 +377,13 @@ input:focus, textarea:focus {
   border-radius:50%;
 }
 /* HEADER */
-.ivory-header {
+.shift{
+  margin-top:-20vh;
+}
+.dropdown-menu{
+  width:50vw;
+}
+ .ivory-header {
     position: absolute;
     inset: 0 0 auto;
     padding: 30px 0;
@@ -394,7 +400,7 @@ input:focus, textarea:focus {
                 margin-right:50px;
             }
             a{
-                color: var(--text-white);
+                color:var(--text-dark);
                 font-size: 14px;
 
                 &:hover{
@@ -550,6 +556,21 @@ input:focus, textarea:focus {
             position: relative;
             z-index: 50;
         }
+     .hamburger .top {
+     margin-bottom: 4px;            
+        width:10vw;
+            height: 0.2vh;
+        }
+     .hamburger .meat {
+           margin-bottom: 4px;
+            width:5vw;
+            height: 0.2vh;
+        }
+     .hamburger .bottom{
+         margin-bottom: 4px;
+            width:10vw;
+        height: 0.2vh;
+        }
         .hamburger {
             position: absolute;
             z-index: 51;
@@ -563,10 +584,11 @@ input:focus, textarea:focus {
         }
 
         .hamburger>div {
+          
             position: relative;
             width: 30px;
             height: 2px;
-            background-color: var(--color-white);
+            background-color: black;
             margin-top: 5px;
             transition: all 0.4s ease-in-out;
         }
@@ -575,12 +597,14 @@ input:focus, textarea:focus {
         #header-toggle:checked+.hamburger .top {
             transform: rotate(-45deg);
             background-color: var(--text-dark);
+                       width:9vw;
         }
 
         #header-toggle:checked+.hamburger .meat {
             transform: rotate(45deg);
             background-color: var(--text-dark);
             margin-top: -2px;
+           width:9vw;
         }
 
         #header-toggle:checked+.hamburger .bottom {
