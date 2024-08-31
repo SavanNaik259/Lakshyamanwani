@@ -665,5 +665,32 @@
         });
     });
 </script>
+        <script>
+
+        document.addEventListener("DOMContentLoaded", function() {
+
+            const dropdownButton = document.getElementById("uniquenav-dropdown-btn");
+
+            const portfolioMenu = document.getElementById("uniquenav-portfolio-menu");
+
+
+
+            // Toggle submenu for "Portfolio"
+
+            dropdownButton.addEventListener("click", function(e) {
+
+                e.preventDefault(); // Prevent default button behavior
+
+                dropdownButton.classList.toggle("active");
+
+                portfolioMenu.classList.toggle("active");
+
+            });
+
+        });
+
+        </script>
+
 </body>
+    
 </html>
