@@ -550,26 +550,26 @@ input:focus, textarea:focus {
 }
 /* HEADER MENU OPEN */
 
-@media (max-width:991px) {
-    .ivory-header {
+ @media (max-width:991px) {
+     .ivory-header {
         .ivory-logo {
             position: relative;
             z-index: 50;
         }
      .hamburger .top {
-     margin-bottom: 4px;            
+     margin-bottom: 3px;            
         width:10vw;
-            height: 0.2vh;
+            height: 0.5vh;
         }
      .hamburger .meat {
-           margin-bottom: 4px;
+           margin-bottom: 3px;
             width:5vw;
-            height: 0.2vh;
+            height: 0.5vh;
         }
      .hamburger .bottom{
-         margin-bottom: 4px;
+         margin-bottom: 3px;
             width:10vw;
-        height: 0.2vh;
+        height: 0.5vh;
         }
         .hamburger {
             position: absolute;
@@ -588,15 +588,16 @@ input:focus, textarea:focus {
             position: relative;
             width: 30px;
             height: 2px;
-            background-color: black;
-            margin-top: 5px;
-            transition: all 0.4s ease-in-out;
-        }
+            /*background-color: black;*/
+             background-color:#333;
+             margin-top: 5px;
+             transition: all 0.4s ease-in-out;
+         }
 
         /* Hamburger Animation */
         #header-toggle:checked+.hamburger .top {
             transform: rotate(-45deg);
-            background-color: var(--text-dark);
+            background-color: var(--text-dark)!important;
                        width:9vw;
         }
 
