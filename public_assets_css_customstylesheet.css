@@ -189,6 +189,9 @@ input:focus, textarea:focus {
         margin-left: 30px;
         margin-right: 30px;
     }
+    .artical-top{
+      margin-top:100px!important;
+    }
 }
 @media (max-width:1199px) {
     .px-75{
@@ -201,6 +204,9 @@ input:focus, textarea:focus {
     }
     .mb-40{
         margin-bottom: 30px;
+    }
+    .artical-top{
+      margin-top:100px!important;
     }
 }
 @media (max-width:991px) {
@@ -222,6 +228,9 @@ input:focus, textarea:focus {
     .mb-40{
         margin-bottom: 20px;
     }
+    .artical-top{
+      margin-top:100px!important;
+    }
 }
 @media (max-width:767px) {
     .pt-100{
@@ -241,6 +250,9 @@ input:focus, textarea:focus {
     }
     .mb-40{
         margin-bottom: 20px;
+    }
+    .artical-top{
+      margin-top:0!important;
     }
 }
 @media (max-width:575px) {
@@ -269,6 +281,9 @@ input:focus, textarea:focus {
     .mx-75{
         margin-left: 12px;
         margin-right:12px;
+    }
+    .artical-top{
+      margin-top:0!important;
     }
 }
         .uniquenav-navbar-menu {
@@ -471,7 +486,8 @@ input:focus, textarea:focus {
   place-items:center;
 }
 .nama-logo{
-  width:50vw!important;
+  border-radius: 80%!important;
+  width:40vw!important;
 }
 /* HEADER */
 .shift{
@@ -497,7 +513,7 @@ input:focus, textarea:focus {
                 margin-right:50px;
             }
             a{
-                color:var(--text-white);
+                color:var(--text-dark);
                 font-size: 14px;
 
                 &:hover{
@@ -814,7 +830,6 @@ input:focus, textarea:focus {
     max-width: 400px;
     max-height: 505px;
     position: relative;
-    margin-left: auto;
     margin-top: 270px;
 }
 .artical-cover-2{
