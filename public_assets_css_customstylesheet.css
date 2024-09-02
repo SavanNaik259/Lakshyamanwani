@@ -275,7 +275,7 @@ input:focus, textarea:focus {
 
             list-style: none;
 
-            display: flex;
+            display: flex; 
             justify-content: center;
             align-items: center;
             flex-direction: column;
@@ -350,6 +350,15 @@ input:focus, textarea:focus {
         .uniquenav-submenu a:hover {
             background-color: #555;
         }
+
+
+  /*@media (max-width: 1268px) {
+
+            .uniquenav-navbar-menu {
+
+                
+            }
+        }*/
 
         .uniquenav-place-button {
             display: flex;
@@ -791,7 +800,7 @@ input:focus, textarea:focus {
         max-width: 740px;
     }
     .artical-content-main{
-        margin-top: 85px;
+        margin-top: 10vw!important;
         margin-left: 20px;
         p{
             color: #5B5B5B;
@@ -930,7 +939,7 @@ input:focus, textarea:focus {
 
 /* IMAGES SLIDER */
 .ivory-images-main {
-  height: 315px!important;
+  height: auto!important;
     .slick-dots {
         display: flex;
         justify-content: center;
