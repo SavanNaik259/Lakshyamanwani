@@ -275,7 +275,7 @@ input:focus, textarea:focus {
 
             list-style: none;
 
-            display: none;
+            display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: column;
@@ -349,13 +349,6 @@ input:focus, textarea:focus {
 
         .uniquenav-submenu a:hover {
             background-color: #555;
-        }
-
-
-        @media (max-width: 768px) {
-            .uniquenav-navbar-menu {
-                display: flex; 
-            }
         }
 
         .uniquenav-place-button {
