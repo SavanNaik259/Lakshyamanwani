@@ -286,6 +286,9 @@ input:focus, textarea:focus {
       margin-top:0!important;
     }
 }
+.txt{
+  font-family: Sans-Serif;
+}
         .uniquenav-navbar-menu {
 
             list-style: none;
