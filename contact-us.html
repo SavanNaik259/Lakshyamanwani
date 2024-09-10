@@ -306,7 +306,7 @@ New Delhi - 11024 </p>
             // Amount validation
             var amountNum = parseFloat(amount);
             var minAmount = 1; // Minimum amount in INR
-            var maxAmount = 49,000; // Maximum amount in INR
+            var maxAmount = 49000; // Maximum amount in INR
 
             if (isNaN(amountNum) || amountNum < minAmount || amountNum > maxAmount) {
                 document.getElementById('amount-error').style.display = 'inline';
