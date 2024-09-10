@@ -306,7 +306,7 @@ New Delhi - 11024 </p>
             // Amount validation
             var amountNum = parseFloat(amount);
             var minAmount = 1; // Minimum amount in INR
-            var maxAmount = 1000000; // Maximum amount in INR
+            var maxAmount = 49,000; // Maximum amount in INR
 
             if (isNaN(amountNum) || amountNum < minAmount || amountNum > maxAmount) {
                 document.getElementById('amount-error').style.display = 'inline';
@@ -322,12 +322,12 @@ New Delhi - 11024 </p>
 
             // Razorpay options
             var options = {
-                "key": "YOUR_KEY_ID", // Replace with your Razorpay Key ID
+                "key": "rzp_live_wvVpmGQJPMc6KL", // Replace with your Razorpay Key ID
                 "amount": amountInPaisa, // Amount is in currency subunits (paisa)
                 "currency": "INR",
-                "name": "Your Company Name",
-                "description": "Test Transaction",
-                "image": "https://example.com/your_logo", // Replace with your logo URL
+                "name": "Safarnama films",
+                "description": "Advance Payment For Wedding And Prewedding",
+                "image": "SANJ9307.jpg", // Replace with your logo URL
                 "handler": function(response) {
                     alert("Payment Successful! Payment ID: " + response.razorpay_payment_id);
                     // Here, you can redirect the user to a success page or perform any post-payment actions
