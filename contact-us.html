@@ -257,6 +257,7 @@ New Delhi - 11024 </p>
   </section>
  </main>
     <!-- Razorpay Payment Script -->
+            <script src="config.js"></script>
     <script>
         // Initialize intl-tel-input
         var input = document.querySelector("#contact");
@@ -322,12 +323,12 @@ New Delhi - 11024 </p>
 
             // Razorpay options
             var options = {
-                "key": "rzp_live_wvVpmGQJPMc6KL", // Replace with your Razorpay Key ID
+                "key": RAZORPAY_KEY, // Replace with your Razorpay Key ID
                 "amount": amountInPaisa, // Amount is in currency subunits (paisa)
                 "currency": "INR",
-                "name": "Your Company Name",
-                "description": "Test Transaction",
-                "image": "https://example.com/your_logo", // Replace with your logo URL
+                "name": "Safarnama films",
+                "description": "Small advances for wedding and pre-weddings",
+                "image": "UB_0194.jpg", // Replace with your logo URL
                 "handler": function(response) {
                     alert("Payment Successful! Payment ID: " + response.razorpay_payment_id);
                     // Here, you can redirect the user to a success page or perform any post-payment actions
