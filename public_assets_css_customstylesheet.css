@@ -484,27 +484,16 @@ input:focus, textarea:focus {
         }
     }
 }
-.nama-header{
-  display: flex;
-  justify-content: center;
-  place-items:center;
-}
-.nama-logo{
-  border-radius: 80%!important;
-  width:40vw!important;
-}
+
 /* HEADER */
 .shift{
   margin-top:-20vh;
 }
-.dropdown-menu{
+/*.dropdown-menu{
   width:50vw;
-}
+}*/
  .main-header {
-    position: absolute;
-    inset: 0 0 auto;
-    padding: 30px 0;
-    z-index: 999;
+   position: absolute;
     .photography-logo svg{
         fill: #ffffff;
     }
@@ -602,7 +591,6 @@ input:focus, textarea:focus {
 @media (min-width:992px) and (max-width:1199px) {
     /* HEADER */
     .main-header {
-        padding: 30px 0;
         .photography-logo svg{
             height: auto;
             width: 220px;
@@ -629,7 +617,7 @@ input:focus, textarea:focus {
         min-height: 480px;
     }
     .main-header {
-        padding: 18px 0;
+  
         .photography-logo svg{
             height: auto;
             width: 220px;
@@ -644,7 +632,7 @@ input:focus, textarea:focus {
         object-fit: cover;
     }
     .main-header {
-        padding: 18px 0;
+      
         .photography-logo svg{
             height: auto;
             width: 180px;
@@ -658,14 +646,14 @@ input:focus, textarea:focus {
         object-fit: cover;
     }
     .main-header {
-        padding: 18px 0;
+
         .photography-logo svg{
             height: auto;
             width: 123px;
         }
     }
 }
-/* HEADER MENU OPEN */
+/* HEADER MENU OPEN 
 
  @media (max-width:991px) {
      .main-header {
@@ -701,14 +689,14 @@ input:focus, textarea:focus {
         }
 /*             background-color:#E8E9EB;
 
-             box-shadow: 3px 3px #898989;*/
-        .hamburger>div {
+             box-shadow: 3px 3px #898989;
+         .hamburger>div {
           
-            position: relative;
+             position: relative;
             width: 30px;
             height: 2px;
-            /*background-color: black;*/
-             background-color:#E8E9EB  ;
+            /*background-color: black;
+              background-color:#E8E9EB  ;
              box-shadow: 3px 3px #898989;
              margin-top: 5px;
              transition: all 0.4s ease-in-out;
