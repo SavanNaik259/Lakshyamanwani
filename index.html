@@ -509,7 +509,79 @@ Get In Touch
 <!-- vimeo video player -->
 <script src="https://player.vimeo.com/api/player.js"></script>
 
-<script>
+  <script>
+$(document).ready(function () {
+  // HOME PAGE SLIDER
+  $('.slider_carousel').slick({
+    dots: true,
+    arrows: false,
+    infinite: true,
+    pauseOnHover: false,
+    speed: 1000,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    SlidesToScroll: 1,
+    SlidesToShow: 1
+  });
+});
+        document.addEventListener('DOMContentLoaded', function() {
+            // Scroll to top functionality
+            const scrollUp = document.getElementById('scrollUp');
+            if (scrollUp) {
+                scrollUp.addEventListener('click', function() {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                });
+            }
+            
+            // Magnetic effect for social links
+            const magneticElements = document.querySelectorAll('.magnetic-area');
+            
+            magneticElements.forEach(elem => {
+                elem.addEventListener('mousemove', function(e) {
+                    const position = elem.getBoundingClientRect();
+                    const x = e.clientX - position.left - position.width / 2;
+                    const y = e.clientY - position.top - position.height / 2;
+                    
+                    elem.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
+                });
+                
+                elem.addEventListener('mouseleave', function() {
+                    elem.style.transform = 'translate(0px, 0px)';
+                });
+            });
+            
+            // Intersection Observer for animations
+            const observerOptions = {
+                threshold: 0.5
+            };
+            
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+            
+            document.querySelectorAll('.footer-info, .logo-container').forEach(el => {
+                observer.observe(el);
+            });
+            
+            // Subtle parallax effect
+            window.addEventListener('scroll', function() {
+                const scrollPosition = window.scrollY;
+                const rotatingText = document.querySelector('.rotating-text');
+                
+                if (rotatingText) {
+                    const rotateValue = scrollPosition * 0.05;
+                    rotatingText.style.transform = `rotate(${rotateValue}deg)`;
+                }
+            });
+        }
 $(document).ready(function () {
   // HOME PAGE SLIDER
   $('.slider_carousel').slick({
