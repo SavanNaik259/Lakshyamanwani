@@ -881,13 +881,143 @@ Explore Photography
 </div>
 
 </section>
-<div clas="photography-video mb-100">
-<div clas="video-sect-main">
-<div styl="padding:56.25% 0 0 0;position:relative;">
-<iframe width="100%" height="515" src="https://www.youtube.com/embed/rULoCYqucVg?si=WlRVh_8q5fklBlqo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</div>
-</div>
-</div>
+<!-- This div has been moved to replace the YouTube iframe at line 790 -->
+
+          <section class="photography-awards mb-100 mx-75">
+          <!-- Video player above the heading -->
+          <div class="row mb-5">
+          <div class="col-12">
+          <div class="custom-video-container">
+              <video 
+                  id="emotionalMomentsVideo"
+                  width="100%" 
+                  height="250" 
+                  preload="metadata"
+                  autoplay
+                  muted
+                  loop
+                  class="custom-video">
+                  <source src="assets/wedding-video.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+              </video>
+
+              <div class="video-text-overlay">Sneha × Akshay</div>
+              <button class="more-btn" id="emotionalMoreBtn">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="12" cy="5" r="2" fill="white"/>
+                      <circle cx="12" cy="12" r="2" fill="white"/>
+                      <circle cx="12" cy="19" r="2" fill="white"/>
+                  </svg>
+              </button>
+              <button class="big-play-btn" id="emotionalBigPlayBtn">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M5 3L19 12L5 21V3Z" fill="white"/>
+                  </svg>
+              </button>
+
+              <!-- Current time indicator with white background that moves with progress -->
+              <div class="current-time-indicator" id="emotionalCurrentTimeIndicator" style="position: absolute; bottom: 45px; transform: translateX(-50%); z-index: 5; display: none; opacity: 0; visibility: hidden; background-color: white; color: black; padding: 3px 6px; border-radius: 4px; font-size: 12px; font-weight: 500; pointer-events: none;"></div>
+
+              <!-- Settings Panel for emotional video -->
+              <div class="settings-panel" id="emotionalSettingsPanel" style="display: none;">
+                  <div class="panel-header">
+                      <span>Settings</span>
+                  </div>
+                  <div class="panel-section">
+                      <div class="section-title">Playback Speed</div>
+                      <select id="emotionalSpeedSelect" class="settings-select">
+                          <option value="0.25">0.25x</option>
+                          <option value="0.5">0.5x</option>
+                          <option value="0.75">0.75x</option>
+                          <option value="1" selected>Normal</option>
+                          <option value="1.25">1.25x</option>
+                          <option value="1.5">1.5x</option>
+                          <option value="1.75">1.75x</option>
+                          <option value="2">2x</option>
+                      </select>
+                  </div>
+              </div>
+
+              <!-- CC Panel for emotional video -->
+              <div class="cc-panel" id="emotionalCcPanel" style="display: none;">
+                  <div class="panel-header">
+                      <span>Subtitles/CC</span>
+                  </div>
+                  <div class="cc-options">
+                      <div class="cc-item active">Off</div>
+                      <div class="cc-item">English</div>
+                      <div class="cc-item">Hindi</div>
+                      <div class="cc-item">Spanish</div>
+                  </div>
+              </div>
+
+              <!-- More options Panel for emotional video -->
+              <div class="more-panel" id="emotionalMorePanel" style="display: none;">
+                  <div class="panel-header">
+                      <span>More Options</span>
+                  </div>
+                  <div class="more-options">
+                      <button id="emotionalShareButton" class="option-btn">
+                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <circle cx="18" cy="5" r="3" stroke="white" stroke-width="2"/>
+                              <circle cx="6" cy="12" r="3" stroke="white" stroke-width="2"/>
+                              <circle cx="18" cy="19" r="3" stroke="white" stroke-width="2"/>
+                              <line x1="9" y1="10.5" x2="15" y2="6.5" stroke="white" stroke-width="2"/>
+                              <line x1="9" y1="13.5" x2="15" y2="17.5" stroke="white" stroke-width="2"/>
+                          </svg>
+                          Share
+                      </button>
+                  </div>
+              </div>
+
+              <div class="custom-video-controls">
+                  <button class="play-btn" id="emotionalPlayBtn">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M5 3L19 12L5 21V3Z" fill="white"/>
+                      </svg>
+                  </button>
+                  <div class="progress-container" id="emotionalProgressContainer">
+                      <div class="progress-bar" id="emotionalProgressBar"></div>
+                  </div>
+                  <div class="time-display" id="emotionalTimeDisplay">0:00 / 0:00</div>
+
+                  <div class="control-right-group">
+                      <button class="volume-btn" id="emotionalVolumeBtn">
+                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M11 5L6 9H2V15H6L11 19V5Z" fill="white"/>
+                              <path d="M15.54 8.46C16.4774 9.39764 17.0039 10.6692 17.0039 11.995C17.0039 13.3208 16.4774 14.5924 15.54 15.53" stroke="white" stroke-width="2"/>
+                              <path d="M19.07 4.93C20.9447 6.80528 21.9979 9.34836 21.9979 12C21.9979 14.6516 20.9447 17.1947 19.07 19.07" stroke="white" stroke-width="2"/>
+                          </svg>
+                      </button>
+                      <button class="cc-btn" id="emotionalCcBtn">
+                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <rect x="2" y="5" width="20" height="14" rx="2" stroke="white" stroke-width="2"/>
+                              <path d="M10 12.5C10 13.8807 8.88071 15 7.5 15C6.11929 15 5 13.8807 5 12.5C5 11.1193 6.11929 10 7.5 10C8.88071 10 10 11.1193 10 12.5Z" stroke="white" stroke-width="2"/>
+                              <path d="M19 12.5C19 13.8807 17.8807 15 16.5 15C15.1193 15 14 13.8807 14 12.5C14 11.1193 15.1193 10 16.5 10C17.8807 10 19 11.1193 19 12.5Z" stroke="white" stroke-width="2"/>
+                          </svg>
+                      </button>
+                      <button class="settings-btn" id="emotionalSettingsBtn">
+                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <circle cx="12" cy="12" r="2" stroke="white" stroke-width="2"/>
+                              <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" stroke="white" stroke-width="1.5" fill="none"/>
+                          </svg>
+                      </button>
+                      <button class="pip-btn" id="emotionalPipBtn">
+                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <rect x="2" y="4" width="20" height="16" rx="2" stroke="white" stroke-width="2"/>
+                              <rect x="14" y="12" width="6" height="5" rx="1" fill="white"/>
+                          </svg>
+                      </button>
+                      <button class="fullscreen-btn" id="emotionalFullscreenBtn">
+                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                          </svg>
+                      </button>
+                  </div>
+              </div>
+          </div>
+          </div>
+          </div>
 <section class="photography-awards mb-100 mx-75">
 <div class="photography-videography-title text-center mb-100">
 <h3>Capturing real emotions and intimate moments, preserving your special day for eternity</h3>
@@ -1144,6 +1274,7 @@ $(document).ready(function () {
             });
         });
 </script>
+  <script src="slider.js"></script>
 <!-- Dropdown menu functionality is now in custom.js -->
 <script src="custom.js"></script>
 </body>
