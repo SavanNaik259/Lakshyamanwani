@@ -26,6 +26,570 @@
 <link rel="stylesheet" href="public_assets_theme_css_slick.min.css">
 <link rel="stylesheet" href="custom-nav.css">
 <style>
+                          /* Slick dots styling with important to override Slick defaults */
+            .slick-dots {
+              position: absolute !important;
+              bottom: 50px !important;
+              left: 0 !important;
+              right: 0 !important;
+              display: flex !important;
+              justify-content: center !important;
+              padding: 0 !important;
+              margin: 0 !important;
+              list-style: none !important;
+              z-index: 30 !important;
+            }
+
+            .slick-dots li {
+              position: relative !important;
+              display: inline-block !important;
+              width: auto !important;
+              height: auto !important;
+              margin: 0 12px !important;
+              padding: 0 !important;
+              cursor: pointer !important;
+            }
+
+            .slick-dots li button {
+              font-size: 0 !important;
+              line-height: 0 !important;
+              width: 25px !important;
+              height: 25px !important;
+              padding: 0 !important;
+              border: 1.5px solid #fff !important;
+              border-radius: 50% !important;
+              background: transparent !important;
+              cursor: pointer !important;
+              outline: none !important;
+              display: block !important;
+            }
+
+            .slick-dots li.slick-active button {
+              background: #fff !important;
+            }
+
+            /* Responsive styles with !important flags */
+            @media (min-width: 1200px) {
+              .slick-dots {
+                bottom: 60px !important;
+              }
+            }
+
+            @media (max-width: 991px) {
+              .slick-dots {
+                bottom: 40px !important;
+              }
+
+              .slick-dots li {
+                margin: 0 10px !important;
+              }
+
+              .slick-dots li button {
+                width: 15px !important;
+                height: 15px !important;
+              }
+            }
+
+            @media (max-width: 767px) {
+              .slick-dots {
+                bottom: 30px !important;
+              }
+
+              .slick-dots li {
+                margin: 0 10px !important;
+              }
+
+              .slick-dots li button {
+                width: 15px !important;
+                height: 15px !important;
+                border-width: 1.5px !important;
+              }
+            }
+
+            @media (max-width: 480px) {
+              .slick-dots {
+                bottom: 20px !important;
+              }
+
+              .slick-dots li {
+                margin: 0 10px !important;
+              }
+
+              .slick-dots li button {
+                width: 12px !important;
+                height: 12px !important;
+                border-width: 1px !important;
+              }
+            }
+
+            
+            
+
+            /* Video Player Styling */
+            .custom-video-container {
+              position: relative;
+              width: 100%;
+              margin-bottom: 30px;
+              overflow: hidden;
+            }
+
+            .custom-video {
+              width: 100%;
+              height: 250px;
+              display: block;
+              object-fit: cover;
+              cursor: pointer;
+            }
+
+            .video-text-overlay {
+              position: absolute;
+              top: 20px;
+              left: 20px;
+              font-size: 18px;
+              font-weight: 700;
+              color: white;
+              text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+            }
+
+            .more-btn {
+              position: absolute;
+              top: 20px;
+              right: 20px;
+              background: transparent;
+              border: none;
+              cursor: pointer;
+            }
+
+            .big-play-btn {
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              width: 80px;
+              height: 80px;
+              background: rgba(0,0,0,0.5);
+              border: none;
+              border-radius: 50%;
+              cursor: pointer;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+
+            .current-time-indicator {
+              position: absolute;
+              bottom: 50px;
+              left: 20px;
+              background: white !important;
+              color: black !important;
+              padding: 3px 6px;
+              border-radius: 4px;
+              font-size: 12px;
+              font-weight: 500;
+              box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+              pointer-events: none;
+              transform: translateX(-50%);
+              transition: left 0.1s linear;
+              z-index: 10;
+            }
+
+            /* Auto-playing video (above "Capturing real emotions..." section) - Hide controls by default */
+            .photography-awards .custom-video-container .custom-video-controls,
+            .photography-awards .custom-video-container .big-play-btn,
+            .photography-awards .custom-video-container .more-btn {
+              opacity: 0;
+              visibility: hidden;
+              transition: opacity 0.3s, visibility 0.3s;
+            }
+
+            /* Show controls when paused or when controls-visible class is added */
+            .photography-awards .custom-video-container.controls-visible .custom-video-controls,
+            .photography-awards .custom-video-container.controls-visible .big-play-btn,
+            .photography-awards .custom-video-container.controls-visible .more-btn {
+              opacity: 1;
+              visibility: visible;
+            }
+
+            .custom-video-controls {
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              right: 0;
+              height: 40px;
+              background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+              display: flex;
+              align-items: center;
+              padding: 0 15px;
+            }
+
+            .play-btn {
+              background: transparent;
+              border: none;
+              cursor: pointer;
+              margin-right: 10px;
+            }
+
+            .progress-container {
+              flex-grow: 1;
+              height: 4px;
+              background: rgba(255,255,255,0.3);
+              position: relative;
+              cursor: pointer;
+              margin: 0 10px;
+            }
+
+            .progress-bar {
+              height: 100%;
+              background: white;
+              width: 0%;
+            }
+
+            .time-display {
+              color: white;
+              font-size: 12px;
+              margin: 0 10px;
+              min-width: 85px;
+            }
+
+            .control-right-group {
+              display: flex;
+              gap: 10px;
+            }
+
+            .volume-btn, .cc-btn, .settings-btn, .pip-btn, .fullscreen-btn {
+              background: transparent;
+              border: none;
+              cursor: pointer;
+              }
+                          /* Completely Rebuilt Video Slider Styles */
+            .video-slider {
+              position: relative;
+              max-width: 1000px;
+              margin: 0 auto;
+              overflow: hidden;
+              padding-bottom: 40px;
+            }
+
+            .video-track {
+              display: flex;
+              width: 400%; /* 100% for each of the 4 slides */
+              transition: transform 0.5s ease-in-out;
+            }
+
+            .video-item {
+              flex: 1;
+              min-width: 25%; /* Each slide takes 1/4 of the total width */
+              padding: 0 10px;
+              box-sizing: border-box;
+              opacity: 0.8;
+              transform: scale(0.9);
+              transition: all 0.4s ease;
+            }
+
+            .video-item.active {
+              opacity: 1;
+              transform: scale(1);
+              position: relative; /* Ensure proper positioning for overlays */
+            }
+
+            /* Style for the click overlay */
+            .iframe-click-overlay {
+              position: absolute;
+              top: 0;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              z-index: 10;
+              cursor: pointer;
+              background-color: rgba(0, 0, 0, 0.01); /* Nearly transparent */
+            }
+
+            .video-item iframe {
+              display: block;
+              width: 100%;
+              border-radius: 8px;
+              box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+              background-color: #000; /* Black background for video frames */
+            }
+
+            /* Controls */
+            .slider-controls {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              margin-top: 20px;
+            }
+
+            .prev-btn, .next-btn {
+              background: rgba(0,0,0,0.1);
+              border: none;
+              width: 40px;
+              height: 40px;
+              border-radius: 50%;
+              cursor: pointer;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              margin: 0 10px;
+              transition: background 0.3s ease, transform 0.2s ease;
+            }
+
+            .prev-btn:hover, .next-btn:hover {
+              background: rgba(0,0,0,0.2);
+              transform: scale(1.1);
+            }
+
+            .slider-dots {
+              display: flex;
+              gap: 8px;
+              margin: 0 15px;
+            }
+
+            .dot {
+              width: 12px;
+              height: 12px;
+              border-radius: 50%;
+              background: #ccc;
+              border: none;
+              cursor: pointer;
+              padding: 0;
+              transition: all 0.3s ease;
+            }
+
+            .dot.active {
+              background: #000;
+              transform: scale(1.2);
+            }
+
+            /* Animation for active slide */
+            @keyframes fadeIn {
+              from { opacity: 0.6; transform: scale(0.9); }
+              to { opacity: 1; transform: scale(1); }
+            }
+
+            .video-item.active {
+              animation: fadeIn 0.5s ease forwards;
+            }
+                        
+
+        
+              .custom-video-container {
+                  position: relative;
+                  width: 100vw;
+                  left: 50%;
+                  right: 50%;
+                  margin-left: -50vw;
+                  margin-right: -50vw;
+                  padding: 0;
+                  overflow: hidden;
+                  background-color: #000;
+              }
+              .custom-video {
+                  width: 100vw;
+                  height: 250px;
+                  display: block;
+                  object-fit: cover;
+                  cursor: pointer;
+              }
+
+              /* Video overlay with the text */
+              .video-text-overlay {
+                  position: absolute;
+                  top: 40px;
+                  left: 0;
+                  right: 0;
+                  padding: 10px 15px;
+                  text-align: center;
+                  color: white;
+                  font-size: 32px;
+                  font-family: 'Times New Roman', Times, serif;
+                  text-transform: uppercase;
+                  letter-spacing: 5px;
+                  z-index: 2;
+                  pointer-events: none;
+                  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+              }
+
+              /* More button in top right */
+              .more-btn {
+                  position: absolute;
+                  top: 10px;
+                  right: 10px;
+                  background: black;
+                  border: none;
+                  cursor: pointer;
+                  z-index: 3;
+                  opacity: 1;
+                  width: 32px;
+                  height: 32px;
+                  border-radius: 4px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  padding: 0;
+              }
+
+              /* Control bar at bottom */
+              .custom-video-controls {
+                  position: absolute;
+                  bottom: 0;
+                  left: 0;
+                  right: 0;
+                  height: 40px;
+                  background: rgba(0, 0, 0, 0.8);
+                  display: flex;
+                  align-items: center;
+                  padding: 8px 12px;
+                  opacity: 0;
+                  transition: opacity 0.2s;
+                  z-index: 3;
+              }
+              .custom-video-container:hover .custom-video-controls,
+              .custom-video-container:hover .timestamp {
+                  opacity: 1;
+              }
+
+              /* Play button */
+              .play-btn {
+                  background: none;
+                  border: none;
+                  color: white;
+                  cursor: pointer;
+                  width: 32px;
+                  height: 32px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  margin-right: 10px;
+                  opacity: 0.9;
+              }
+              .play-btn:hover {
+                  opacity: 1;
+              }
+
+              /* Time display */
+              .time-display {
+                  color: white;
+                  font-size: 14px;
+                  margin: 0 14px;
+                  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+                  min-width: 90px;
+                  opacity: 1;
+                  font-weight: 400;
+                  text-align: right;
+              }
+
+              /* Progress bar */
+              .progress-container {
+                  flex-grow: 1;
+                  height: 5px;
+                  background-color: rgba(255, 255, 255, 0.25);
+                  cursor: pointer;
+                  position: relative;
+                  border-radius: 2px;
+              }
+              .progress-bar {
+                  height: 100%;
+                  width: 0;
+                  background-color: white;
+                  border-radius: 2px;
+              }
+
+              /* Right side control group */
+              .control-right-group {
+                  display: flex;
+                  align-items: center;
+                  margin-left: auto;
+                  gap: 8px;
+              }
+
+              /* Center play button */
+              .big-play-btn {
+                  position: absolute;
+                  top: 50%;
+                  left: 50%;
+                  transform: translate(-50%, -50%);
+                  width: 50px;
+                  height: 50px;
+                  background-color: rgba(0, 0, 0, 0.8);
+                  border: none;
+                  border-radius: 50%;
+                  color: white;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  cursor: pointer;
+                  z-index: 2;
+                  opacity: 0.95;
+                  transition: opacity 0.2s, transform 0.2s;
+              }
+              .big-play-btn:hover {
+                  opacity: 1;
+                  transform: translate(-50%, -50%) scale(1.05);
+              }
+
+              /* Control buttons */
+              .volume-btn, .cc-btn, .settings-btn, .pip-btn, .fullscreen-btn {
+                  background: none;
+                  border: none;
+                  color: white;
+                  cursor: pointer;
+                  width: 32px;
+                  height: 32px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  opacity: 0.85;
+              }
+              .volume-btn:hover, .cc-btn:hover, .settings-btn:hover, .pip-btn:hover, .fullscreen-btn:hover {
+                  opacity: 1;
+              }
+
+              /* Time labels instead of a separate timestamp - we'll remove the separate timestamp */
+              .time-display {
+                  color: white;
+                  font-size: 14px;
+                  margin: 0 14px;
+                  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+                  min-width: 110px;
+                  opacity: 1;
+                  font-weight: 400;
+                  text-align: center;
+              }
+
+              /* Current time in white background directly on the progress bar */
+              .current-time-indicator {
+                  position: absolute;
+                  bottom: 40px; /* Position above the control bar */
+                  background-color: white !important;
+                  color: black !important;
+                  padding: 2px 6px;
+                  font-size: 12px;
+                  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+                  border-radius: 2px;
+                  z-index: 4;
+                  transform: translateX(-50%);
+                  font-weight: 400;
+                  transition: opacity 0.2s, left 0.1s linear;
+                  display: block !important;
+                  opacity: 1 !important;
+                  /* Will be positioned dynamically with JavaScript */
+              }
+
+              /* Add clear arrow pointing down under the timestamp */
+              .current-time-indicator::after {
+                  content: '';
+                  position: absolute;
+                  bottom: -4px; /* Position it outside the box */
+                  left: 50%;
+                  transform: translateX(-50%);
+                  width: 0;
+                  height: 0;
+                  border-left: 5px solid transparent;
+                  border-right: 5px solid transparent;
+                  border-top: 5px solid white; /* Color same as background */
+                }
+            
   .grid-container {
     display: flex;
     justify-content: center;
