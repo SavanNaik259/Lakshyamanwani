@@ -686,7 +686,7 @@ body.menu-open .hamburger .bottom {
 }
       
 
-.footerline{
+/*.footerline{
           margin-top:70px;
           width:100vw;
           height: 3px;
@@ -928,7 +928,9 @@ body.menu-open .hamburger .bottom {
 
 
         .footer-info {
-
+width:100vw;
+          height: 3px;
+          background-color: #B49E64;
             margin-bottom: calc(var(--spacing-unit) * 2);
 
             transition: opacity var(--transition-slow) ease;
