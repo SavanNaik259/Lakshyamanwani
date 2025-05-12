@@ -686,7 +686,12 @@ body.menu-open .hamburger .bottom {
 }
       
 
-
+.footerline{
+          margin-top:70px;
+          width:100vw;
+          height: 3px;
+          background-color: #B49E64;
+        }
 
         /* Modern Footer Styles */
 
