@@ -24,110 +24,117 @@
 <!-- BOOTSTRAP CSS -->
 <!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css"/> -->
 <link rel="stylesheet" href="public_assets_theme_css_bootstrap.min.css">
-
+<link rel="stylesheet" href="custom-nav.css">
 <!-- OUR CUSTOM STYLE SHEET -->
 <link rel="stylesheet" href="public_assets_css_customstylesheet.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.css" />
 </head>
 <body>
+
+
 <!-- HEADER -->
-<header class="main-header photography-details-header mx-75">
-<div class="row align-items-center">
-<div class="col-4 pe-0">
-<div class="header-menu-list">
-<div class="d-none d-lg-block">
-<ul class="flex-center justify-content-start flex-wrap">
-<li><a href="/">Home</a></li>
-<li><a href="about-us.html">About Us</a></li>
-<li class="nav-item dropdown">
-<a class="nav-link dropdown-toggle" href="pre-weddings.html" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-Pre-Weddings
-</a>
-<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-<li><a class="dropdown-item" href="pre-weddings.html">Pre-Wedding</a></li>
-<li><a href="delhi.html">Delhi</a></li>
-<li><a href="jaipur.html">Jaipur</a></li>
-<li><a href="rishikesh.html">Rishikesh</a></li>
-<li><a href="goa.html">Goa</a></li>
-<li><a href="dubai.html">Dubai</a></li>
-<li><a href="bali.html">Bali</a></li>
-<li><a href="baku.html">Baku</a></li>
-</ul>
-</li>
-<li><a href="weddings.html">Weddings</a></li>
-<li><a href="destination-weddings.html">Destination weddings</a></li>
-<li><a href="terms&conditions.html">Terms & Condtions</a></li>
-<li><a href="contact-us.html">Bookings/Contact Us</a></li>
-</ul>
-</div>
-</div>
-<div class="d-block d-lg-none">
-<input id="header-toggle" type="checkbox" aria-hidden="true" hidden onchange="toggleCheckbox(this)" />
-<label class="hamburger" for="header-toggle" aria-hidden="true">
-<div class="top"></div>
-<div class="meat"></div>
-<div class="bottom"></div>
-</label>
-<div class="header-rspnv">
-<ul class="uniquenav-navbar-menu" id="uniquenav-navbar-menu">
-<div class=" nama-header">
-<a href="/"><img src="IMG_20240901_104403.png"width="100"class="nama-logo" /></a>
-</div>
-<li><a href="/">Home</a></li>
-<li><a href="about-us.html">About</a></li>
-<li>
-<div class="uniquenav-place-button">
-<a href="pre-weddings.html">Pre-Weddings</a>
-<button class="uniquenav-dropdown-btn" id="uniquenav-dropdown-btn">▼</button>
-</div>
-<ul class="uniquenav-submenu" id="uniquenav-portfolio-menu">
-<li><a class="dropdown-item" href="delhi.html">Delhi</a></li>
-<li><a class="dropdown-item" href="jaipur.html">Jaipur</a></li>
-<li><a class="dropdown-item" href="rishikesh.html">Rishikesh</a></li>
-<li><a class="dropdown-item" href="goa.html">Goa</a></li>                     <li><a class="dropdown-item" href="dubai.html">Dubai</a></li>
-<li><a class="dropdown-item" href="bali.html">Bali</a></li>
-<li><a class="dropdown-item" href="baku.html">Baku</a></li>
-</ul>
-</li>
-<li><a href="weddings.html">Weddings</a></li>
-<li><a href="destination-weddings.html">Destination weddings</a></li>
-<li><a href="terms&conditions.html">Terms & Condtions</a></li>
-<li><a href="contact-us.html">Bookings/Contact Us</a></li>
-<li><a href="https://www.Instagram.com/safarnamafilms" target="_blank">
-<i class="fab fa-instagram insta-icon" aria-hidden="true"></i>
-</a></li>
-<div class="photography-btn-main">
-<a href="contact-us.html" class="photography-btn">
-Get In Touch
-</a>
-</div>
-</ul>
-</div>
-</div>
-</div>
-<div class="col-12 col-md-4">
-<div class=" nama-header">
-<a href="/"><img src="IMG_20240901_104403.png"width="100"class="nama-logo" /></a>
-</div>
-</div>
-<div class="col-4 d-none d-lg-block">
-<div class="header-connect-list">
-<ul class="flex-center justify-content-end">
-<li><a href="https://www.Instagram.com/safarnamafilms" target="_blank">
-<i class="fab fa-instagram insta-icon" aria-hidden="true"></i>
-</a></li>
-<li>
-<div class="photography-btn-main">
-<a href="contact-us.html" class="photography-btn">
-Get In Touch
-</a>
-</div>
-</li>
-</ul>
-</div>
-</div>
-</div>
+<!-- Main Navigation -->
+
+<header class=" main-header2">
+  <!-- Mobile Menu Toggle - Left side with highly visible hamburger -->
+  <div class="mobile-toggle">
+    <div class="hamburger" aria-label="Menu" role="button" tabindex="0">
+      <div class="top"></div>
+      <div class="meat"></div>
+      <div class="bottom"></div>
+    </div>
+  </div>
+  
+  <!-- Desktop Navigation -->
+  <nav class="top-nav">
+    <div class="nav-container">
+      <ul class="main-menu">
+        <li><a href="/">Home</a></li>
+        <li><a href="about-us.html">About Us</a></li>
+        <li class="nav-item dropdown">
+          <div class="dropdown-wrapper">
+            <a class="nav-link" href="pre-weddings.html">Pre-Weddings</a>
+            <button class="dropdown-arrow" id="pre-weddings-dropdown-toggle">
+              <i class="fa-solid fa-angle-down"></i>
+            </button>
+            <ul class="dropdown-menu" id="pre-weddings-dropdown-menu">
+              <li><a class="dropdown-item" href="delhi.html">Delhi</a></li>
+              <li><a class="dropdown-item" href="jaipur.html">Jaipur</a></li>
+              <li><a class="dropdown-item" href="rishikesh.html">Rishikesh</a></li>
+              <li><a class="dropdown-item" href="goa.html">Goa</a></li>
+              <li><a class="dropdown-item" href="dubai.html">Dubai</a></li>
+              <li><a class="dropdown-item" href="bali.html">Bali</a></li>
+              <li><a class="dropdown-item" href="baku.html">Baku</a></li>
+            </ul>
+          </div>
+        </li>
+        <li><a href="weddings.html">Weddings</a></li>
+        <li><a href="destination-weddings.html">Destination weddings</a></li>
+        <li><a href="terms&conditions.html">Terms & Conditions</a></li>
+        <li><a href="contact-us.html">Bookings/Contact Us</a></li>
+      </ul>
+      
+      <div class="social-buttons">
+        <a href="https://www.Instagram.com/safarnamafilms" target="_blank" class="social-icon">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="contact-us.html" class="get-in-touch-btn">
+          GET IN TOUCH
+        </a>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- Mobile Navigation Sidebar (slides from right) -->
+  <div class="mobile-nav">
+    <div class="mobile-nav-content">
+      <div class="nama-header-mobile">
+        <a href="/"><img src="IMG_20240901_104403.png" width="100" class="nama-logo" /></a>
+      </div>
+      <ul class="mobile-menu-list">
+        <li><a href="/">Home</a></li>
+        <li><a href="about-us.html">About</a></li>
+        <li class="has-submenu">
+          <div class="submenu-toggle">
+            <a href="pre-weddings.html">Pre-Weddings</a>
+            <button class="mobile-dropdown-btn" id="mobile-dropdown-btn">
+              <i class="fa-solid fa-angle-down"></i>
+            </button>
+          </div>
+          <ul class="mobile-submenu">
+            <li><a href="delhi.html">Delhi</a></li>
+            <li><a href="jaipur.html">Jaipur</a></li>
+            <li><a href="rishikesh.html">Rishikesh</a></li>
+            <li><a href="goa.html">Goa</a></li>
+            <li><a href="dubai.html">Dubai</a></li>
+            <li><a href="bali.html">Bali</a></li>
+            <li><a href="baku.html">Baku</a></li>
+          </ul>
+        </li>
+        <li><a href="weddings.html">Weddings</a></li>
+        <li><a href="destination-weddings.html">Destination weddings</a></li>
+        <li><a href="terms&conditions.html">Terms & Conditions</a></li>
+        <li><a href="contact-us.html">Bookings/Contact Us</a></li>
+      </ul>
+      <div class="mobile-social">
+        <a href="https://www.Instagram.com/safarnamafilms" target="_blank" class="mobile-social-icon">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="contact-us.html" class="mobile-btn">
+          Get In Touch
+        </a>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Overlay for mobile menu -->
+  <div class="menu-overlay"></div>
 </header>
+        <div class=" mt-00 nama-header">
+
+                      <a href="/"><img src="IMG_20240901_104403.png"width="100"class="nama-logo"/></a>
+
+            </div>
 <main>
 <div class="photography-editorial-gallery">
 <div class="photography-videography-title text-center mb-100 mt-100 px-75">
@@ -204,7 +211,7 @@ Discover the serene beauty of Rishikesh for your pre-wedding photoshoot with Saf
 <script type="text/javascript" src="public_assets_js_custom.js"></script>
 
 <script src="assets_backoffice_js_common.js?v=1724066121" type="text/javascript"></script>
-
+  <script src="custom.js"></script>
 <!-- Masonry script -->
 <script type="text/javascript" src="public_assets_theme_js_masonry.pkgd.min.js"></script>
 <!-- Lazysizes script -->
