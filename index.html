@@ -318,8 +318,8 @@
               background: transparent;
               border: none;
               cursor: pointer;
-              }
-                          /* Completely Rebuilt Video Slider Styles 
+              }*/
+                          /* Completely Rebuilt Video Slider Styles */
             .video-slider {
               position: relative;
               max-width: 1000px;
@@ -331,12 +331,12 @@
             .video-track {
               display: flex;
               width: 400%; /* 100% for each of the 4 slides 
-              transition: transform 0.5s ease-in-out;
+              transition: transform 0.5s ease-in-out;*/
             }
 
             .video-item {
               flex: 1;
-              min-width: 25%; /* Each slide takes 1/4 of the total width 
+              min-width: 25%; /* Each slide takes 1/4 of the total width */
               padding: 0 10px;
               box-sizing: border-box;
               opacity: 0.8;
@@ -350,7 +350,7 @@
               position: relative; /* Ensure proper positioning for overlays */
             }
 
-            /* Style for the click overlay 
+            /* Style for the click overlay */
             .iframe-click-overlay {
               position: absolute;
               top: 0;
@@ -359,7 +359,7 @@
               bottom: 0;
               z-index: 10;
               cursor: pointer;
-              background-color: rgba(0, 0, 0, 0.01); /* Nearly transparent 
+              background-color: rgba(0, 0, 0, 0.01); /* Nearly transparent */
             }
 
             .video-item iframe {
@@ -367,10 +367,10 @@
               width: 100%;
               border-radius: 8px;
               box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-              background-color: #000; /* Black background for video frames *
+              background-color: #000; /* Black background for video frames */
             }
 
-            /* Controls 
+            /* Controls */
             .slider-controls {
               display: flex;
               justify-content: center;
@@ -419,7 +419,7 @@
               transform: scale(1.2);
             }
 
-            /* Animation for active slide 
+            /* Animation for active slide */
             @keyframes fadeIn {
               from { opacity: 0.6; transform: scale(0.9); }
               to { opacity: 1; transform: scale(1); }
@@ -450,7 +450,7 @@
                   cursor: pointer;
               }
 
-              /* Video overlay with the text 
+              /* Video overlay with the text */
               .video-text-overlay {
                   position: absolute;
                   top: 40px;
@@ -468,7 +468,7 @@
                   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
               }
 
-              /* More button in top right 
+              /* More button in top right */
               .more-btn {
                   position: absolute;
                   top: 10px;
@@ -487,7 +487,7 @@
                   padding: 0;
               }
 
-              /* Control bar at bottom 
+              /* Control bar at bottom */
               .custom-video-controls {
                   position: absolute;
                   bottom: 0;
@@ -507,7 +507,7 @@
                   opacity: 1;
               }
 
-              /* Play button 
+              /* Play button */
               .play-btn {
                   background: none;
                   border: none;
@@ -525,7 +525,7 @@
                   opacity: 1;
               }
 
-              /* Time display 
+              /* Time display */
               .time-display {
                   color: white;
                   font-size: 14px;
@@ -537,7 +537,7 @@
                   text-align: right;
               }
 
-              /* Progress bar 
+              /* Progress bar */
               .progress-container {
                   flex-grow: 1;
                   height: 5px;
@@ -553,7 +553,7 @@
                   border-radius: 2px;
               }
 
-              /* Right side control group 
+              /* Right side control group */
               .control-right-group {
                   display: flex;
                   align-items: center;
@@ -561,7 +561,7 @@
                   gap: 8px;
               }
 
-              /* Center play button 
+              /* Center play button */
               .big-play-btn {
                   position: absolute;
                   top: 50%;
@@ -586,7 +586,7 @@
                   transform: translate(-50%, -50%) scale(1.05);
               }
 
-              /* Control buttons *
+              /* Control buttons */
               .volume-btn, .cc-btn, .settings-btn, .pip-btn, .fullscreen-btn {
                   background: none;
                   border: none;
@@ -603,7 +603,7 @@
                   opacity: 1;
               }
 
-              /* Time labels instead of a separate timestamp - we'll remove the separate timestamp *
+              /* Time labels instead of a separate timestamp - we'll remove the separate timestamp */
               .time-display {
                   color: white;
                   font-size: 14px;
@@ -615,10 +615,10 @@
                   text-align: center;
               }
 
-              /* Current time in white background directly on the progress bar *
+              /* Current time in white background directly on the progress bar */
               .current-time-indicator {
                   position: absolute;
-                  bottom: 40px; /* Position above the control bar *
+                  bottom: 40px; /* Position above the control bar */
                   background-color: white !important;
                   color: black !important;
                   padding: 2px 6px;
@@ -631,22 +631,22 @@
                   transition: opacity 0.2s, left 0.1s linear;
                   display: block !important;
                   opacity: 1 !important;
-                  /* Will be positioned dynamically with JavaScript *
+                  /* Will be positioned dynamically with JavaScript */
               }
 
-              /* Add clear arrow pointing down under the timestamp *
+              /* Add clear arrow pointing down under the timestamp */
               .current-time-indicator::after {
                   content: '';
                   position: absolute;
-                  bottom: -4px; /* Position it outside the box *
+                  bottom: -4px; /* Position it outside the box */
                   left: 50%;
                   transform: translateX(-50%);
                   width: 0;
                   height: 0;
                   border-left: 5px solid transparent;
                   border-right: 5px solid transparent;
-                  border-top: 5px solid white; /* Color same as background *
-                }*/
+                  border-top: 5px solid white; /* Color same as background */
+                }
             
 
 </style>
