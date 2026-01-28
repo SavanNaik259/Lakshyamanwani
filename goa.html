@@ -192,8 +192,13 @@ Set against the stunning backdrop of Goa's sun-kissed beaches and vibrant landsc
 <div class="footerline mb-100"></div>
         <div class=" footer-info">
             <div class="copyright">
-                © 2025 Safarnama Films, All Rights Reserved
-            </div>
+  © <span id="year"></span> Safarnama Films, All Rights Reserved
+</div>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
             <div class="developer">
                 Design & Developed By <a href="https://savannaik.netlify.app" target="_blank">Savan Naik</a>
             </div>
@@ -332,3 +337,4 @@ portfolioMenu.classList.toggle("active");
 </script>
 </body>
     </html>
+
